@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Compliment Shower for Kannuukuttyyy</title>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #4A90C3, #A9D6F2);
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .compliment {
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: floatDown 10s linear forwards;
+    font-family: 'Quicksand', sans-serif;
+    user-select: none;
+  }
+
+  @keyframes floatDown {
+    0% {
+      transform: translateY(-10vh);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+
+  .start-btn, .link-btn {
+    background: white;
+    color: #4A90C3;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .start-btn:hover, .link-btn:hover {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+<h1 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin-bottom: 20px;">Ready for some love, Kannuukuttyyy? 💕</h1>
+<button class="start-btn" onclick="startShower()">Start Compliment Shower ✨</button>
+
+<!-- Added link button to candles.html -->
+<a href="candles.html" class="link-btn" role="button" aria-label="Go to candle blowing game">Go to Candle Blowing Game 🕯️</a>
+
+<script>
+  const compliments = [
+  "You’re my favorite notification 💬",
+  "Cuter than perfectly indented code 😘",
+  "You light up my darkest bugs 🐞💡",
+  "Your smile > any JavaScript framework 💙",
+  "You are my only ‘true’ statement 😍",
+  "Without you, life throws 404 ❤️",
+  "You're the semicolon to my syntax ;)",
+  "You're my forever commit 💍",
+  "Better than any AI model 😉",
+  "You're the reason I Ctrl+S my heart 💾",
+  "You decode my sadness into joy 🧠✨",
+  "You're the only output I ever wanted 👩‍💻❤️",
+  "You're the main() of my life 💻",
+  "My heart pings only for you 🏓💘",
+  "You're the WiFi to my world 🌐",
+  "You're sweeter than GitHub dark theme 🌙🍫",
+  "I’d never ghost you, even in the cloud 👻☁️",
+  "You're the CSS to my HTML 💅",
+  "I love you more than I love debugging 😅❤️",
+  "Every second with you is a perfect loop ⏳",
+  "You make my heart DDoS with love 💥",
+  "You’re the root access to my soul 🔐",
+  "You're the emoji to my plain text 😍📄",
+  "You turn my low battery days into full charge 🔋💙",
+  "Your hugs are better than a successful build 🔧",
+  "With you, even Mondays feel like weekends ☕💗",
+  "You're the sparkle in my console.log ✨",
+  "You are my forever OTP (One True Pair) 🧡",
+  "You handle all my exceptions gracefully 🙏💕",
+  "You're not just the ‘if’ — you're my ‘then’ too 🫶"
+];
+
+
+  let intervalId;
+
+  function dropCompliment() {
+    const compliment = document.createElement('div');
+    compliment.className = 'compliment';
+    compliment.textContent = compliments[Math.floor(Math.random() * compliments.length)];
+    compliment.style.left = Math.random() * 80 + 'vw';
+    compliment.style.fontSize = (1.5 + Math.random()).toFixed(2) + 'rem';
+    compliment.style.animationDuration = (8 + Math.random() * 5) + 's';
+    document.body.appendChild(compliment);
+    setTimeout(() => compliment.remove(), 13000);
+  }
+
+  function startShower() {
+    if (!intervalId) {
+      intervalId = setInterval(dropCompliment, 800);
+    }
+  }
+</script>
+
+</body>
+</html>

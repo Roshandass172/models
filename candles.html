@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Birthday Cake with Candles</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+  body, html {
+    margin: 0; padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    font-family: 'Comfortaa', cursive;
+    color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  h1 {
+    margin: 30px 0 20px 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #f0f8ff;
+    text-shadow:
+      0 0 8px #ffffffbb,
+      0 0 20px #4A90C3cc,
+      0 0 35px #3a6fb7cc;
+  }
+
+  .cake-container {
+    position: relative;
+    width: 320px;
+    height: 280px;
+  }
+
+  /* Cake base */
+  .cake {
+    width: 320px;
+    height: 220px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border-radius: 32px 32px 12px 12px;
+    box-shadow:
+      inset 0 5px 12px #f9b9bd,
+      0 12px 18px #7a3d3d88;
+    position: relative;
+  }
+
+  /* Candles container */
+  .candles {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    width: 260px;
+    height: 70px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  /* Each candle */
+  .candle {
+    position: relative;
+    width: 30px;
+    height: 70px;
+    background: linear-gradient(180deg, #e0f7fa 0%, #80deea 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 8px #80deeaaa;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+  }
+  .candle.blowed {
+    filter: brightness(0.6);
+  }
+
+  /* Flame shape */
+  .flame {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    width: 16px;
+    height: 28px;
+    background: radial-gradient(circle at 50% 70%, #ffd54f 40%, #f57c00 90%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: translateX(-50%) rotate(-15deg);
+    box-shadow: 0 0 8px 2px #f57c00cc;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .candle.blowed .flame {
+    opacity: 0;
+  }
+
+  /* Confetti pieces */
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 14px;
+    background: red;
+    opacity: 1;
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 9999;
+    animation-timing-function: linear;
+  }
+
+  /* Confetti colors */
+  .confetti.color1 { background: #ff6384; }
+  .confetti.color2 { background: #ff9f40; }
+  .confetti.color3 { background: #ffcd56; }
+  .confetti.color4 { background: #4bc0c0; }
+  .confetti.color5 { background: #36a2eb; }
+
+  @keyframes topConfettiDrop {
+    0% {
+      transform: translateY(-30px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Congratulatory message */
+  #congrats {
+  position: fixed;
+  top: 10vh;           /* closer to top */
+  left: 50%;           /* center horizontally */
+  transform: translateX(-50%);
+  width: auto;
+  text-align: center;
+  font-size: 3rem;
+  color: #ff4081;
+  font-weight: 900;
+  text-shadow:
+    0 0 12px #ff4081cc,
+    0 0 25px #ff4081aa,
+    0 0 40px #ff4081bb;
+  user-select: none;
+  display: none;
+  z-index: 10000;
+}
+
+
+  /* Timeline Link Styling */
+  .timeline-link {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .timeline-link a {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.3rem;
+    color: #ff79c6;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #ff79c6;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #ff79c6aa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+  }
+  .timeline-link a:hover {
+    background-color: #ff79c6;
+    color: #1b263b;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="cake-container" aria-label="Birthday cake with candles">
+  <div class="candles" role="list" aria-label="Candles">
+    <div class="candle" role="listitem" tabindex="0" aria-label="Candle 1">
+      <div class="flame"></div>
+    </div>
+    <div class="candle" role="listitem" tabindex="0" aria-label="Candle 2">
+      <div class="flame"></div>
+    </div>
+    <div class="candle" role="listitem" tabindex="0" aria-label="Candle 3">
+      <div class="flame"></div>
+    </div>
+    <div class="candle" role="listitem" tabindex="0" aria-label="Candle 4">
+      <div class="flame"></div>
+    </div>
+  </div>
+  <div class="cake" aria-hidden="true"></div>
+</div>
+
+<div class="timeline-link">
+  <a href="timeline.html" aria-label="Go to the love timeline page">See Our Love Timeline 💖</a>
+</div>
+
+<div id="congrats" role="alert" aria-live="assertive">
+  Happy Birthday Kannukuttyyyy❤️
+</div>
+
+<script>
+  const candles = document.querySelectorAll('.candle');
+  const congrats = document.getElementById('congrats');
+
+  let blownCount = 0;
+  let confettiColors = ['color1', 'color2', 'color3', 'color4', 'color5'];
+
+  function createConfettiPiece() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    const color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+    confetti.classList.add(color);
+
+    confetti.style.left = (Math.random() * 100) + 'vw';
+    confetti.style.top = '-20px';
+
+    confetti.style.animation = `topConfettiDrop ${2 + Math.random() * 2}s linear forwards`;
+    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 4000);
+  }
+
+  function dropConfetti() {
+    for(let i = 0; i < 30; i++) {
+      setTimeout(createConfettiPiece, i * 80);
+    }
+  }
+
+  candles.forEach(candle => {
+    candle.addEventListener('click', () => {
+      if (candle.classList.contains('blowed')) return;
+      candle.classList.add('blowed');
+      blownCount++;
+
+      dropConfetti();
+
+      if (blownCount === candles.length) {
+        congrats.style.display = 'block';
+      }
+    });
+    candle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        candle.click();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

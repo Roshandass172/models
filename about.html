@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Chellakuttyyy!! ❤️</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Comfortaa&display=swap');
+
+  body, html {
+    margin: 0; padding: 30px;
+    background: linear-gradient(135deg, #d0e2ff, #4A90C3);
+    font-family: 'Comfortaa', cursive;
+    color: #f0f8ff;
+    min-height: 100vh;
+    user-select: none;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {opacity: 1;}
+  }
+  @keyframes fadeOut {
+    to {opacity: 0;}
+  }
+
+  h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #f0f8ff;
+    text-shadow:
+      0 0 8px #ffffffbb,
+      0 0 20px #4A90C3cc,
+      0 0 35px #3a6fb7cc;
+    user-select: text;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 3rem;
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .card {
+    background: transparent;
+    border-radius: 18px;
+    width: 170px;
+    height: 160px;
+    perspective: 1000px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px #224f8ccc;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.07);
+  }
+
+  .card-inner {
+    width: 100%; height: 100%;
+    border-radius: 18px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 18px;
+    text-align: center;
+    color: #f0f8ff;
+    user-select: text;
+    box-sizing: border-box;
+    top: 0; left: 0;
+  }
+
+  .card-front {
+    background: #4A90C3;
+  }
+
+  .card-back {
+    background: #82b1ff;
+    color: #1a2f5d;
+    transform: rotateY(180deg);
+  }
+
+  .love-letter {
+    max-width: 700px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    background: rgba(255 255 255 / 0.15);
+    border-radius: 22px;
+    padding: 30px 38px;
+    box-shadow:
+      0 0 25px 7px #4A90C3aa;
+    color: #e7f0ff;
+    user-select: text;
+    margin-bottom: 3rem;
+  }
+
+  button {
+    background: #4A90C3;
+    color: white;
+    border: none;
+    padding: 16px 50px;
+    border-radius: 35px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 0 20px #3f7bc6cc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #7fa9f0cc;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  .heart {
+    position: fixed;
+    bottom: -40px;
+    width: 32px;
+    height: 32px;
+    background: #ff4a70;
+    clip-path: polygon(
+      50% 0%, 61% 15%, 75% 15%, 88% 30%, 88% 50%,
+      75% 68%, 50% 85%, 25% 68%, 12% 50%, 12% 30%, 25% 15%, 39% 15%
+    );
+    filter: drop-shadow(0 0 4px #ff4a70);
+    animation: floatUp linear forwards;
+    opacity: 0.85;
+    z-index: 10;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateY(-110vh) scale(1.3);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>My Chellakuttyyy!! ❤️</h1>
+
+<div class="cards-container" role="list" aria-label="Fun facts cards">
+  <div class="card" tabindex="0" role="listitem" aria-pressed="false">
+    <div class="card-inner">
+      <div class="card-front">Sleepy Head 😴💤</div>
+      <div class="card-back">Always needs her beauty sleep! 🛌</div>
+    </div>
+  </div>
+  <div class="card" tabindex="0" role="listitem" aria-pressed="false">
+    <div class="card-inner">
+      <div class="card-front">Chocolate Flavour All The Way 🍫</div>
+      <div class="card-back">Sweet tooth champion! 🍩</div>
+    </div>
+  </div>
+  <div class="card" tabindex="0" role="listitem" aria-pressed="false">
+    <div class="card-inner">
+      <div class="card-front">Such a Cutie Pieee 🥹❤️</div>
+      <div class="card-back">Adorable to the core! 🧸</div>
+    </div>
+  </div>
+  <div class="card" tabindex="0" role="listitem" aria-pressed="false">
+    <div class="card-inner">
+      <div class="card-front">You just a Babieee 😇❤️</div>
+      <div class="card-back">Forever my little angel! 👼</div>
+    </div>
+  </div>
+</div>
+
+<div class="love-letter" aria-label="Love letter section">
+  I for one, never believed God truly existed. I thought it was just Time and Fate playing its games. Angels and the So Called Heaven, were not something I believed in. All of me changed, when My Eyes set its sights, on the Beauty of a Girl...A Never Before Seen Beauty. She was so Fascinating, Her Eyes just, so Round and Beautiful. Don't even get me started on her lips..OMGGG they're so fineee, and yes, she did, still does, have that caring heart for what I fell for first. I am so much in love with this girl you know...and she is you
+  <br><br>
+  Happy Birthday My Dear Angel ❤️
+</div>
+
+<button type="button" aria-label="Go to next page" onclick="fadeOutAndGo()">Next 💖</button>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+      let pressed = card.getAttribute('aria-pressed') === 'true';
+      card.setAttribute('aria-pressed', !pressed);
+    });
+    card.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+        let pressed = card.getAttribute('aria-pressed') === 'true';
+        card.setAttribute('aria-pressed', !pressed);
+      }
+    });
+  });
+
+  function spawnHeart(){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = (Math.random() * 100) + 'vw';
+    heart.style.animationDuration = (8 + Math.random() * 4) + 's';
+    heart.style.opacity = 0.85;
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 13000);
+  }
+  setInterval(spawnHeart, 900);
+
+  function fadeOutAndGo() {
+    document.body.style.animation = 'fadeOut 1.5s forwards';
+    setTimeout(() => {
+      window.location.href = "game.html";
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>

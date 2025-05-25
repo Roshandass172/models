@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Starry Sky Ending</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+  body, html {
+    margin: 0; padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #000011;
+    font-family: 'Comfortaa', cursive;
+    color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+  }
+
+  #particles-js {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background: #000011;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    padding: 20px;
+  }
+
+  .message {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    text-shadow:
+      0 0 10px #ff6f91cc,
+      0 0 20px #ff6f91bb,
+      0 0 30px #ff6f91aa;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+    background: #ff6f91;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow:
+      0 4px 12px #ff6f91bb;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn:hover {
+    background: #ff3b6f;
+    box-shadow:
+      0 6px 20px #ff3b6fdd;
+  }
+</style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<div class="content">
+  <div class="message">
+    “No matter how many lines of code I write,<br> nothing will ever express how much I love you 💖”
+  </div>
+  <a href="lastpage.html" class="btn">
+    Let’s build forever together 🚀
+  </a>
+</div>
+
+<!-- particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 120, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "star", stroke: { width: 0, color: "#000000" } },
+      opacity: {
+        value: 0.8,
+        random: true,
+        anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+      },
+      size: {
+        value: 3,
+        random: true,
+        anim: { enable: false, speed: 20, size_min: 0.1, sync: false }
+      },
+      line_linked: { enable: false },
+      move: {
+        enable: true,
+        speed: 0.6,
+        direction: "none",
+        random: true,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: { enable: false }
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: false },
+        resize: true
+      },
+      modes: {
+        repulse: { distance: 100, duration: 0.4 }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+
+</body>
+</html>
